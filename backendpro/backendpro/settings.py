@@ -132,3 +132,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
