@@ -25,9 +25,10 @@ def generate_quiz(request):
 
     topic = request.data.get('topic')
     difficulty = request.data.get('difficulty')
+    count = request.data.get('count')
 
     prompt = f"""
-    Generate 5 MCQ questions about {topic}
+    Generate {count} MCQ questions about {topic}
     with {difficulty} difficulty.
 
     Return ONLY valid JSON.
