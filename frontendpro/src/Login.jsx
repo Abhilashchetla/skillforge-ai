@@ -1,74 +1,53 @@
 import { useState } from "react";
 import API from "./api";
 
-function Login() {
+function Login({ onLogin, gotoregister }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+  const handleLogin = async () => {
+    try {
+      const response = await API.post("login/", {
+        username,
+        password,
+      });
 
-    const handleLogin = async () => {
+      localStorage.setItem("access", response.data.access);
 
-        try {
+      localStorage.setItem("username", username);
 
-            const response = await API.post(
-                "token/",
-                {
-                    username,
-                    password
-                }
-            )
-
-            localStorage.setItem(
-                "access",
-                response.data.access
-            )
-
-            localStorage.setItem(
-                "username",
-                username
-            )
-
-            alert("Login Successful")
-
-        } catch (error) {
-
-            alert("Invalid Credentials")
-
-        }
-
+      onLogin();
+    } catch (error) {
+      alert("Invalid Credentials");
     }
+  };
 
-    return (
+  return (
+    <div className="auth-container">
+      <div className="auth-box">
+        <h1>Login</h1>
 
-        <div className="login-box">
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-            <h1>Login</h1>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) =>
-                    setUsername(e.target.value)
-                }
-            />
+        <button onClick={handleLogin}>Login</button>
+        <p>Don't have account?</p>
 
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) =>
-                    setPassword(e.target.value)
-                }
-            />
-
-            <button onClick={handleLogin}>
-                Login
-            </button>
-
-        </div>
-
-    )
+        <button onClick={gotoregister}>Register</button>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
