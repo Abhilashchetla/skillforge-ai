@@ -9,11 +9,7 @@ import "./Styles/Global.css";
 import { useState } from "react";
 
 function App() {
-  const [page, setPage] = useState(
-    localStorage.getItem("isLoggedIn") === "true"
-      ? "quiz"
-      : "login"
-  );
+  const [page, setPage] = useState("login");
 
   return (
     <div>
