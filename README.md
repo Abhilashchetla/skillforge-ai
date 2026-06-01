@@ -96,6 +96,22 @@ Create a `.env` file in the project root:
 ```env
 OPENAI_API_KEY=YOUR_API_KEY
 ```
+## Screenshots
+
+### Login Page
+![Login Page](Screenshots/login_user.png)
+
+### Register Page
+![Register Page](Screenshots/register_user.png)
+
+### Quiz Generator
+![Quiz Generator](Screenshots/Dashboard.png)
+
+### Quiz Question
+![Quiz Question](Screenshots/user_select_questions.png)
+
+### Score Page
+![Score Page](Screenshots/result.png)
 
 ## Future Enhancements
 
