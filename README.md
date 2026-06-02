@@ -1,6 +1,6 @@
 # SkillForge AI - AI Quiz Generator
 
-SkillForge AI is a full-stack AI-powered quiz generation platform that creates multiple-choice quizzes dynamically based on user-selected topics, difficulty levels, and question counts.
+SkillForge AI is a full-stack AI-powered quiz generation platform that creates multiple-choice quizzes dynamically based on user-selected topics, difficulty levels, and question counts and get results.
 
 ## Features
 
